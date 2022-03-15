@@ -14,6 +14,7 @@ class GameEngine(Board):
         self.firstPlayer = firstPlayer
         self.secondPlayer = secondPlayer
 
+    # Def qui commence
     def whoStart(self, firstPlayer, secondPlayer):
         roll = random.randint(1,2)
         if roll == 1:
@@ -22,11 +23,12 @@ class GameEngine(Board):
             print(f"{secondPlayer} play first")
         return roll
 
+    # Def tour
     def turn(self,roll):
         if roll == 1:
             self.turn = 1
 
-
+    # Def qui joue en fonction d'un modulo
     def whoPlay(self):
         if self.turn % 2 == 0:
             print(f"It's {self.secondPlayer} turn")
@@ -35,10 +37,11 @@ class GameEngine(Board):
             print(f"It's {self.firstPlayer} turn")
             return self.p1
 
+    # Fais tourner le compteur de tour pour changer de joueur
     def playTurn(self):
         self.turn += 1
 
-
+    # Def qui gagne
     def whoWin(self):
         if self.turn % 2 == 0:
             self.p2Score += 1

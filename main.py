@@ -35,14 +35,14 @@ while game:
             engine.whoWin()
             board.showBoard()
             start = False
-        # if board.checkColumn():
-        #     engine.whoWin()
-        #     board.showBoard()
-        #     start = False
-        # if board.checkDiagonal():
-        #     engine.whoWin()
-        #     board.showBoard()
-        #     start = False
+        if board.checkColumn():
+            engine.whoWin()
+            board.showBoard()
+            start = False
+        if board.checkDiagonal():
+            engine.whoWin()
+            board.showBoard()
+            start = False
         if board.isBoardFull():
             print('---------')
             print("DRAW !")
