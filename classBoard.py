@@ -36,21 +36,32 @@ class Board:
 
     # Verification si une ligne est victorieuse (return True)
     def checkLine(self):
-        res = ''
+        verif = ''
         for i in self.board:
             for j in i:
-                res += self.board[i][j]
-            if res == 'XXX' or res == 'OOO':
+                verif += j
+            if verif == 'XXX' or verif == 'OOO':
                 return True
         return False
 
     # Verification si une colonne est victorieuse (return True)
     def checkColumn(self):
-        res = ''
+        verifC1 = ''
+        verifC2 = ''
+        verifC3 = ''
         for i in self.board:
-            for j in i:
-                res += self.board[j][i]
-            if res == 'XXX' or res == 'OOO':
+            for index,value in enumerate(i):
+                if index == 0:
+                    verifC1 += value
+                elif index == 1:
+                    verifC2 += value
+                else:
+                    verifC3 += value
+            if verifC1 == 'XXX' or verifC1 == 'OOO':
+                return True
+            elif verifC2 == 'XXX' or verifC2 == 'OOO':
+                return True
+            elif verifC3 == 'XXX' or verifC3 == 'OOO':
                 return True
         return False
 
@@ -58,7 +69,7 @@ class Board:
     def checkDiagonal(self):
         res = ''
         for i in self.board:
-            res += self.board[i][i]
+            res += i[i]
             if res == 'XXX' or res == 'OOO':
                 return True
         return False
