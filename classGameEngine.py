@@ -45,7 +45,9 @@ class GameEngine(Board):
     def whoWin(self):
         if self.turn % 2 == 0:
             self.p2Score += 1
+            print('=====================')
             print(f"The winner is {self.secondPlayer}")
+            print('=====================')
         else:
             self.p1Score += 1
             print(f"The winner is {self.firstPlayer}")

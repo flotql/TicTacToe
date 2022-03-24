@@ -67,12 +67,16 @@ class Board:
 
     # Verification si une diago est victorieuse (return True)
     def checkDiagonal(self):
-        res = ''
-        for i in self.board:
-            res += i[i]
-            if res == 'XXX' or res == 'OOO':
-                return True
+        diag1 = ''
+        diag1 += self.board[0][0]+self.board[1][1]+self.board[2][2]
+        if diag1 == 'XXX' or diag1 == 'OOO':
+            return True
+        diag2 = ''
+        diag2 += self.board[2][0]+self.board[1][1]+self.board[0][2]
+        if diag2 == 'XXX' or diag2 == 'OOO':
+            return True
         return False
+
 
     # Check si plateau plein
     def isBoardFull(self):

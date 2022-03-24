@@ -6,13 +6,5 @@ a = ""
 b = ""
 c = ""
 
-for k in i:
-    for index, value in enumerate(k):
-        if index == 0:
-            a += value
-        elif index == 1:
-            b += value
-        else :
-            c += value
-for j in i:
-    print()
+a += i[0][0]+i[1][1]
+print(a)
